@@ -1,0 +1,7 @@
+<div class="m-3">
+    <h2>Edit Dep</h2>
+    <input type="text" [(ngModel)]="dep.deptedit.departname" placeholder="name">
+    <input type="text" [(ngModel)]="dep.deptedit.capacity" placeholder="capacity">
+    <!-- <input type="button" value="Save" (click)="dep.save(dep.deptedit.departid)"> -->
+    <button class="btn btn-outline-primary m-1" routerLink="/departments" (click)="dep.save(dep.deptedit.departid)">save</button>
+</div>

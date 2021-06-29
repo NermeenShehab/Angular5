@@ -1,0 +1,56 @@
+<button class="btn btn-outline-primary m-1" routerLink="/departments/add">Add</button>
+
+<table class="table table-bordered table-hover  table-light p-5">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Capacity</th>
+            <th>operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of departments ">
+            <td>{{item.departid}}</td>
+            <td>{{item.departname}}</td>
+            <td> {{item.capacity}}</td>
+            <td>
+                <button class="btn btn-outline-primary m-1" routerLink="/departments/details/{{item.departid}}">Details</button>
+                <!-- <button class="btn btn-outline-primary m-1" (click)="departserve.details(item.departid) ">Details</button> -->
+                <button class="btn btn-outline-danger m-1" (click)="departserve.Deletedepart(item.departid) ">Delete</button>
+                <button class="btn btn-outline-success m-1" (click)="departserve.Edit(item.departid) " routerLink="/departments/edit/{{item.departid}}">Edit</button>
+                <!-- <button class="btn btn-outline-success m-1 " (click)="departserve.Edit(item.departid) ">Edit</button> -->
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+<!-- <div class="container border border-1 border-primary; ">
+
+    <div class="row px-3 border border-1 border-primary ; ">
+        <div class="col lg-4 md-4 ">Id</div>
+        <div class="col lg-4 md-4 ">Name</div>
+        <div class="col lg-4 md-4 ">Capacity</div>
+        <div class="col lg-4 md-4 ">operation</div>
+
+
+    </div>
+    <div class="row p-3 border border-1 border-primary " *ngFor="let item of departments ; let f=even let o=odd " [ngClass]="{ 'bgred': f, 'bggray':o} ">
+        <div class=" col lg-4 md-4 ">{{item.departid}}</div>
+        <div class="col lg-4 md-4 ">{{item.departname}}</div>
+        <div class="col lg-4 md-4 "> {{item.capacity}}</div>
+        <div class="col lg-4 md-4 ">
+          
+            <button (click)="departserve.details(item.departid) ">Details</button>
+            <button (click)="departserve.Deletedepart(item.departid) ">Delete</button>
+            <button (click)="departserve.Edit(item.departid) ">Edit</button>
+        </div>
+    </div>
+</div> -->
